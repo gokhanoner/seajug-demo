@@ -3,6 +3,7 @@
            xmlns="http://www.hazelcast.com/schema/config"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
+    <instance-name>my-hz-instance</instance-name>
     <!-- Port 80 not 8080 -->
     <management-center enabled="true">http://localhost:8080/hazelcast-mancenter</management-center>
 
