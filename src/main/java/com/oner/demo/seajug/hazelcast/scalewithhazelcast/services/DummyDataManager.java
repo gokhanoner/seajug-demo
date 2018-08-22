@@ -4,13 +4,9 @@ import com.oner.demo.seajug.hazelcast.scalewithhazelcast.model.MyPojo;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.cache.CacheManager;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityManager;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
