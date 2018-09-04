@@ -6,7 +6,7 @@ import com.hazelcast.core.Hazelcast;
 public class HzMember {
 
 	public static void main(String[] args) {
-		Hazelcast.newHazelcastInstance(new ClasspathXmlConfig("hz-member.xml"));
+		Hazelcast.newHazelcastInstance(new ClasspathXmlConfig("hazelcast.xml"));
 	}
 
 }
