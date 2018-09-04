@@ -19,7 +19,7 @@ cluster
 
 #### Running as Embedded
 
-Run: `mvn spring-boot:run -Dspring.profiles.active=hz-embedded -Dhazelcast.config=classpath:hz-member.xml`
+Run: `mvn spring-boot:run -Dspring.profiles.active=hz-embedded`
 
 
 #### Running as Client
@@ -28,7 +28,7 @@ You need to Have a running cluster with user code deployment enabled. You can us
 [HzMember](src/test/java/com/oner/demo/seajug/hazelcast/scalewithhazelcast/HzMember.java) class to start a Hazelcast
  member (You can run the ame  & create 2 node Hazelcast cluster)
 
-Then run: `mvn spring-boot:run -Dspring.profiles.active=hz-client -Dhazelcast.client.config=classpath:hz-client.xml`
+Then run: `mvn spring-boot:run -Dspring.profiles.active=hz-client`
 
 ### Testing
 

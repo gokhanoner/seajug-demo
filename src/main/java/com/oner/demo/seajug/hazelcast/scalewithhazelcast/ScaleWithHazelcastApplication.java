@@ -1,6 +1,5 @@
 package com.oner.demo.seajug.hazelcast.scalewithhazelcast;
 
-import com.hazelcast.config.Config;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import org.springframework.boot.SpringApplication;
@@ -19,15 +18,10 @@ public class ScaleWithHazelcastApplication {
 		SpringApplication.run(ScaleWithHazelcastApplication.class, args);
 	}
 
-	@Bean
-	@Profile("member")
-	Config memberConfig() {
-		return new Config();
-	}
 
 	@Bean
-	@Profile("member")
-	HazelcastInstance member(Config config) {
-		return Hazelcast.newHazelcastInstance(config);
+	@Profile("hz-embedded")
+	HazelcastInstance member() {
+		return Hazelcast.newHazelcastInstance();
 	}
 }
