@@ -3,20 +3,20 @@ package com.oner.demo.seajug.hazelcast.scalewithhazelcast.controller;
 
 import com.oner.demo.seajug.hazelcast.scalewithhazelcast.model.MyResult;
 import com.oner.demo.seajug.hazelcast.scalewithhazelcast.services.MyComputationService;
-import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/rest")
-@AllArgsConstructor
 public class MyController {
 
+    @Autowired
     MyComputationService computationService;
 
-    @GetMapping("/fib/{input}")
+    @RequestMapping(method = RequestMethod.GET, path = "/fib/{input}")
     MyResult fibonacci(@PathVariable long input) {
         long start = System.currentTimeMillis();
         long result = computationService.fib(input);

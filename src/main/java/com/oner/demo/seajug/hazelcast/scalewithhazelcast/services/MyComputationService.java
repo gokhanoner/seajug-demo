@@ -15,7 +15,7 @@ public class MyComputationService {
     @Cacheable("fib")
     public long fib(long number) {
         log.debug("Calculating fib {}", number);
-        if(number <= 1) {
+        if (number <= 1) {
             return number;
         } else {
             MyComputationService compService = cacheRecursive ?

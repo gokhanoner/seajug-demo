@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface MyPojoRepo extends JpaRepository<MyPojo, Long> {
 
-    @QueryHints ({ @QueryHint(name = "org.hibernate.cacheable", value ="true") })
+    @QueryHints({@QueryHint(name = "org.hibernate.cacheable", value = "true")})
     List<MyPojo> findAll();
 
 }

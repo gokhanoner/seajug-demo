@@ -1,8 +1,8 @@
 package com.oner.demo.seajug.hazelcast.scalewithhazelcast.services;
 
 import com.oner.demo.seajug.hazelcast.scalewithhazelcast.model.MyPojo;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -14,15 +14,15 @@ import java.util.stream.Stream;
 @Order(Integer.MAX_VALUE)
 @Component
 @Slf4j
-@AllArgsConstructor
 public class DummyDataManager implements CommandLineRunner {
 
+    @Autowired
     MyPojoRepo pojoRepo;
 
     @Override
     public void run(String... args) throws Exception {
         List<MyPojo> all = pojoRepo.findAll();
-        if(all.isEmpty()) {
+        if (all.isEmpty()) {
             log.info("Loading some data");
             ThreadLocalRandom random = ThreadLocalRandom.current();
             Stream.of("Gokhan", "Marko", "Matko", "Peter", "Enes")

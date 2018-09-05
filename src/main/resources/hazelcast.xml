@@ -26,7 +26,8 @@
 
     <map name="spring:session:sessions">
         <attributes>
-            <attribute extractor="org.springframework.session.hazelcast.PrincipalNameExtractor">principalName</attribute>
+            <attribute extractor="org.springframework.session.hazelcast.PrincipalNameExtractor">principalName
+            </attribute>
         </attributes>
         <indexes>
             <index>principalName</index>
